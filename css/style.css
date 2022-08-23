@@ -31,29 +31,21 @@ body{
 }
 .header{
     display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+    flex-direction:column;
     width:var(--large-container-width);
-    gap: 50px;
-}
-.logo{
-    display:flex;
-    align-items: center;
+    gap: 10px;
 }
 .menu{
     display:flex;
-    flex:2;
-    align-items: center;
 }
 .menu ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:flex;
-    gap: var(--typography-v-padding);
-    justify-content: flex-end;
+    flex-direction:column;
+    gap: 5px;
     width: 100%;
-    flex-wrap:wrap;
 }
 .menu ul li{
     display:inline-block;
@@ -61,5 +53,29 @@ body{
 .menu ul li a{
     text-decoration:none;
     color:var(--light-grey);
-    font-size:18px;
+    font-size:14px;
+}
+@media (min-width:768px) {
+    .header{
+        flex-direction:row;
+        justify-content:space-between;
+        gap: 50px;
+    }
+    .logo{
+        display:flex;
+        align-items: center;
+    }
+    .menu{
+        flex:2;
+        align-items: center;
+    }
+    .menu ul{
+        flex-direction:row;
+        gap: 15px;
+        justify-content: flex-end;
+        flex-wrap:wrap;
+    }
+    .menu ul li a{
+        font-size:18px;
+    }
 }
