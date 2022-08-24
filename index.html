@@ -15,8 +15,16 @@
 <body>
     <div class="header-container">
         <div class="header">
+            <a href="#main-menu" id="main-menu-toggle" class="menu-toggle" aria-label="Open main menu">
+                <span class="sr-only">Open main menu</span>
+                <span class="fa fa-bars" aria-hidden="true"></span>
+            </a>
             <div class="logo"><h2>Header Logo</h2></div>
-            <div class="menu">
+            <nav class="menu">
+                <a href="#main-menu-toggle" id="main-menu-toggle" class="menu-close" aria-label="Close main menu">
+                    <span class="sr-only">Close main menu</span>
+                    <span class="fa fa-close" aria-hidden="true"></span>
+                </a>
                 <ul>
                     <li><a href="test.html">header link one</a></li>
                     <li><a href="test.html">header link two</a></li>
@@ -25,7 +33,8 @@
                     <li><a href="test.html">header link five</a></li>
                     <li><a href="test.html">header link six</a></li>  
                 </ul>
-            </div>                 
+            </nav>
+            <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
         </div>
     </div> 
 </body>

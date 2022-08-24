@@ -37,6 +37,7 @@ body{
 }
 .menu{
     display:flex;
+    flex-direction: column;
 }
 .menu ul{
     list-style-type: none;
@@ -66,6 +67,8 @@ body{
         align-items: center;
     }
     .menu{
+        display:flex;
+        flex-direction: column;
         flex:2;
         align-items: center;
     }
