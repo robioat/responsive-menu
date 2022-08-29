@@ -39,6 +39,7 @@ body{
     display:flex;
     flex-direction:row;
     gap:10px;
+    height: 28px;
 }
 .menu{
     display:flex;
@@ -46,8 +47,9 @@ body{
     position:absolute;
     width:100%;
     left:-2100%;
-    top:3px;
+    top:0px;
     padding:var(--typography-v-padding) 0;
+    gap:var(--typography-v-padding);
 }
 .menu-open{
     display:flex;
@@ -55,7 +57,10 @@ body{
     margin-top: -3px;
 }
 .menu-close{
+    display:flex;
+    align-items:center;
     width:max-content;
+    height: 28px;
 }
 #menu:target{
     left:0px;
