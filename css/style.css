@@ -46,13 +46,16 @@ body{
     position:absolute;
     width:100%;
     left:-2100%;
-    top:0px;
+    top:3px;
     padding:var(--typography-v-padding) 0;
 }
 .menu-open{
     display:flex;
     align-items:center;
     margin-top: -3px;
+}
+.menu-close{
+    width:max-content;
 }
 #menu:target{
     left:0px;
