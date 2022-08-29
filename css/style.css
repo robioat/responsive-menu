@@ -38,6 +38,7 @@ body{
 .menu-header-container{
     display:flex;
     flex-direction:row;
+    gap:10px;
 }
 .menu{
     display:flex;
@@ -47,6 +48,11 @@ body{
     left:-2100%;
     top:0px;
     padding:var(--typography-v-padding) 0;
+}
+.menu-open{
+    display:flex;
+    align-items:center;
+    margin-top: -3px;
 }
 #menu:target{
     left:0px;
