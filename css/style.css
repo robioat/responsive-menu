@@ -1,85 +1,134 @@
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    height:100vh;
-    width:100%;
-    --large-container-width:80%;
-    --small-container-width:60%;
-    --dark-blue:#1F2937;
-    --off-white:#F9FAF8;
-    --light-grey:#bfc3c8;
-    --medium-grey:#6b757f;
-    --bright-blue:#3882F6;
-    --grey-blue:#c7d5ed;
-    --section-vertical-padding:100px; 
-    --typography-v-padding:15px;
-    font-family: 'Roboto', sans-serif;
-    color:var(--dark-blue);
+
+body {
+  height: 100vh;
+  width: 100%;
+  --large-container-width:80%;
+  --small-container-width:60%;
+  --dark-blue:#1F2937;
+  --off-white:#F9FAF8;
+  --light-grey:#bfc3c8;
+  --medium-grey:#6b757f;
+  --bright-blue:#3882F6;
+  --grey-blue:#c7d5ed;
+  --section-vertical-padding:100px;
+  --typography-v-padding:15px;
+  font-family: "Roboto", sans-serif;
+  color: var(--dark-blue);
 }
 
 /* Header Styles */
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  padding: var(--typography-v-padding) 0;
+}
 
-.header-container{
-    display:flex;
-    justify-content:center;
-    background-color: var(--dark-blue);
-    color:var(--off-white);
-    padding:var(--typography-v-padding) 0;
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: var(--large-container-width);
+  gap: 10px;
 }
-.header{
-    display:flex;
-    flex-direction:column;
-    width:var(--large-container-width);
-    gap: 10px;
+
+.menu-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
 }
-.menu-header-container{
-    display:flex;
-    flex-direction:row;
-    gap:10px;
-    height: 28px;
+
+.menu {
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  top: 0px;
+  gap: var(--typography-v-padding);
+  background: black;
 }
-.menu{
-    position:absolute;
-    width:100%;
-    left:-100%;
-    top:0px;
-    gap:var(--typography-v-padding);
-    background:black;
+.menu .menu .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
 }
-.menu-open{
-    display:flex;
-    align-items:center;
-    margin-top: -3px;
+
+.menu-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -3px;
 }
-.menu-close{
-    display:flex;
-    align-items:center;
-    width: max-content;
-    height: 28px;
+
+.menu-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 28px;
 }
-#menu:target{
-    left:0px;
+
+#menu:target {
+  left: 0px;
 }
-.menu ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display:flex;
-    flex-direction:column;
-    gap: 5px;
-    width:var(--large-container-width);
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  width: var(--large-container-width);
 }
-.menu ul li{
-    display:inline-block;
+
+.menu ul li {
+  display: inline-block;
 }
-.menu ul li a{
-    text-decoration:none;
-    color:var(--light-grey);
-    font-size:14px;
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--light-grey);
+  font-size: 14px;
 }
+
 /*
 @media (min-width:768px) {
     .header{
@@ -109,4 +158,4 @@ body{
         font-size:18px;
     }
 }
-*/
+*//*# sourceMappingURL=style.css.map */
