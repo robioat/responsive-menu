@@ -42,14 +42,12 @@ body{
     height: 28px;
 }
 .menu{
-    display:flex;
-    flex-direction: column;
     position:absolute;
     width:100%;
-    left:-2100%;
+    left:-100%;
     top:0px;
-    padding:var(--typography-v-padding) 0;
     gap:var(--typography-v-padding);
+    background:black;
 }
 .menu-open{
     display:flex;
@@ -59,7 +57,7 @@ body{
 .menu-close{
     display:flex;
     align-items:center;
-    width:max-content;
+    width: max-content;
     height: 28px;
 }
 #menu:target{
@@ -72,7 +70,7 @@ body{
     display:flex;
     flex-direction:column;
     gap: 5px;
-    width: 100%;
+    width:var(--large-container-width);
 }
 .menu ul li{
     display:inline-block;
