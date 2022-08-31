@@ -22,38 +22,39 @@ body{
 
 /* Header Styles */
 
+/* Header Small Screen Layout */
+
 .header-container{
     display:flex;
     justify-content:center;
     background-color: var(--dark-blue);
     color:var(--off-white);
     padding:var(--typography-v-padding) 0;
-}
-.header{
-    display:flex;
-    flex-direction:column;
-    width:var(--large-container-width);
-    gap: 10px;
-}
-.menu-header-container{
-    display:flex;
-    flex-direction:row;
-    gap:10px;
-}
-.menu{
-    position:absolute;
-    width:100%;
-    left:-100%;
-    top:0px;
-    gap:var(--typography-v-padding);
-    background:black;
-    
-    .menu .logo{
+
+    .header{
         display:flex;
-        flex-direction:column;
-        gap:20px;
+        flex-direction:row;
+        width:var(--large-container-width);
+        gap: 10px;
+    }
+    .menu{
+        position:absolute;
+        width:100%;
+        left:-100%;
+        top:0px;
+        gap:var(--typography-v-padding);
+        background:black;
+        
+        .menu .logo{
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
     }
 }
+
+
+
 
 .menu-open{
     display:flex;
