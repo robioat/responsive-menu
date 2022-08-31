@@ -21,9 +21,6 @@ body{
 }
 
 /* Header Styles */
-
-/* Header Small Screen Layout */
-
 .header-container{
     display:flex;
     justify-content:center;
@@ -36,19 +33,54 @@ body{
         flex-direction:row;
         width:var(--large-container-width);
         gap: 10px;
-    }
-    .menu{
-        position:absolute;
-        width:100%;
-        left:-100%;
-        top:0px;
-        gap:var(--typography-v-padding);
-        background:black;
-        
-        .menu .logo{
+
+        .menu-open{
             display:flex;
-            flex-direction:column;
-            gap:20px;
+            align-items:center;
+            margin-top: -3px;
+        }
+    }
+}
+#menu{
+    position:absolute;
+    width:100%;
+    left:-100%;
+    top:0px;
+    gap:var(--typography-v-padding);
+    background:black;
+
+    &:target{
+        left:0px;
+    }
+
+    .menu-close{
+        display:flex;
+        align-items:center;
+        width: max-content;
+        height: 28px;
+    }
+    .logo{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        flex-direction:column;
+        gap: 5px;
+        width:var(--large-container-width);
+    
+        li{
+            display:inline-block;
+    
+            a{
+                text-decoration:none;
+                color:var(--light-grey);
+                font-size:14px;
+            }
         }
     }
 }
@@ -56,37 +88,6 @@ body{
 
 
 
-.menu-open{
-    display:flex;
-    align-items:center;
-    margin-top: -3px;
-}
-.menu-close{
-    display:flex;
-    align-items:center;
-    width: max-content;
-    height: 28px;
-}
-#menu:target{
-    left:0px;
-}
-.menu ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display:flex;
-    flex-direction:column;
-    gap: 5px;
-    width:var(--large-container-width);
-}
-.menu ul li{
-    display:inline-block;
-}
-.menu ul li a{
-    text-decoration:none;
-    color:var(--light-grey);
-    font-size:14px;
-}
 /*
 @media (min-width:768px) {
     .header{
