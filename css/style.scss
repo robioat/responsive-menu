@@ -8,7 +8,7 @@ body{
     width:100%;
     --large-container-width:80%;
     --small-container-width:60%;
-    -topbar-height:50px;
+    --topbar-height:70px;
     --dark-blue:#1F2937;
     --off-white:#F9FAF8;
     --light-grey:#bfc3c8;
@@ -27,7 +27,7 @@ body{
     justify-content:center;
     background-color: var(--dark-blue);
     color:var(--off-white);
-    padding:var(--typography-v-padding) 0;
+    height:var(--topbar-height);
 
     .header{
         display:flex;
@@ -35,6 +35,11 @@ body{
         justify-content:space-between;
         width:var(--large-container-width);
         gap: 10px;
+
+        .logo{
+            display:flex;
+            align-items:center;
+        }
 
         .menu-open{
             display:flex;
@@ -103,10 +108,12 @@ body{
                 flex-direction: row;
                 flex:2;
                 align-items: center;
+                align-content:center;
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-                gap: 15px;
+                column-gap: 15px;
+                row-gap:10px;
                 justify-content: flex-end;
                 flex-wrap:wrap;
             }
