@@ -53,13 +53,15 @@ body {
 #menu {
   position: absolute;
   width: 100%;
-  left: -100%;
-  top: 0px;
+  left: 0;
+  top: -100%;
   display: flex;
   justify-content: center;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 #menu:target {
-  left: 0px;
+  top: 0px;
 }
 #menu .small-menu-container {
   display: flex;
@@ -75,6 +77,7 @@ body {
   width: -moz-max-content;
   width: max-content;
   height: var(--topbar-height);
+  background-color: var(--dark-blue);
 }
 #menu .small-menu-container ul {
   list-style-type: none;
@@ -121,5 +124,9 @@ body {
   .logo {
     display: flex;
     align-items: center;
+  }
+  #menu:target {
+    position: absolute;
+    left: -100%;
   }
 }/*# sourceMappingURL=style.css.map */
