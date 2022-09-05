@@ -55,33 +55,40 @@ body {
   width: 100%;
   left: -100%;
   top: 0px;
-  gap: var(--typography-v-padding);
-  background: black;
+  display: flex;
+  justify-content: center;
 }
 #menu:target {
   left: 0px;
 }
-#menu .menu-close {
+#menu .small-menu-container {
+  gap: var(--typography-v-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: var(--large-container-width);
+}
+#menu .small-menu-container .menu-close {
   display: flex;
   align-items: center;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: 28px;
+  height: var(--topbar-height);
 }
-#menu ul {
+#menu .small-menu-container ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: var(--large-container-width);
+  width: 100%;
 }
-#menu ul li {
+#menu .small-menu-container ul li {
   display: inline-block;
 }
-#menu ul li a {
+#menu .small-menu-container ul li a {
   text-decoration: none;
   color: var(--light-grey);
   font-size: 14px;
