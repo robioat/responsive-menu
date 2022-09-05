@@ -62,11 +62,11 @@ body {
   left: 0px;
 }
 #menu .small-menu-container {
-  gap: var(--typography-v-padding);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: var(--large-container-width);
+  gap: 1px;
 }
 #menu .small-menu-container .menu-close {
   display: flex;
@@ -82,11 +82,12 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   width: 100%;
 }
 #menu .small-menu-container ul li {
   display: inline-block;
+  background-color: var(--dark-blue);
+  padding: 6px 12px;
 }
 #menu .small-menu-container ul li a {
   text-decoration: none;
