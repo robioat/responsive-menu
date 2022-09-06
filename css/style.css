@@ -33,7 +33,7 @@ body {
 .header-layout .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: var(--large-layout-width);
   gap: 10px;
 }
