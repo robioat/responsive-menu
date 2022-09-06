@@ -66,10 +66,13 @@ body {
 .logo-layout .logo-container .logo-element {
   background-color: var(--dark-blue);
   display: flex;
-  width: 300px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: 100%;
   align-items: center;
   font-size: 22px;
+  padding: 0 50px 0 0;
 }
 
 #menu {
@@ -105,7 +108,7 @@ body {
 #menu .small-menu-layout ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -113,7 +116,7 @@ body {
 #menu .small-menu-layout ul li {
   display: inline-block;
   background-color: var(--dark-blue);
-  padding: 6px 12px;
+  padding: 6px 0;
 }
 #menu .small-menu-layout ul li a {
   text-decoration: none;
