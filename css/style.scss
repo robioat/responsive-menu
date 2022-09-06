@@ -6,8 +6,8 @@
 body{
     height:100vh;
     width:100%;
-    --large-container-width:80%;
-    --small-container-width:60%;
+    --large-layout-width:80%;
+    --small-layout-width:60%;
     --topbar-height:70px;
     --dark-blue:#1F2937;
     --off-white:#F9FAF8;
@@ -22,7 +22,7 @@ body{
 }
 
 /* Header Styles */
-.header-container{
+.header-layout{
     display:flex;
     justify-content:center;
     background-color: var(--dark-blue);
@@ -33,13 +33,8 @@ body{
         display:flex;
         flex-direction:row;
         justify-content:space-between;
-        width:var(--large-container-width);
+        width:var(--large-layout-width);
         gap: 10px;
-
-        .logo{
-            display:flex;
-            align-items:center;
-        }
 
         .menu-open{
             display:flex;
@@ -51,6 +46,34 @@ body{
         }
     }
 }
+.logo-layout{
+    position:absolute;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:var(--off-white);
+    height:var(--topbar-height);
+    pointer-events: none; 
+    
+    .logo-container{
+        width:var(--large-layout-width);
+        height:100%;
+        display:flex;
+        align-items:center;
+
+        .logo-element{
+            background-color: var(--dark-blue);
+            display:flex;
+            width:300px;
+            height:100%;
+            align-items:center;
+            font-size: 22px;
+        }
+    }
+    
+}
 #menu{
     position:absolute;
     width:100%;
@@ -60,15 +83,15 @@ body{
     justify-content:center;
     transition:0.3s;
     transition-timing-function: cubic-bezier(0.190,  1.000, 0.220, 1.000);
- 
+    background-color: var(--dark-blue);
     &:target{
         top:0px;
     }
-    .small-menu-container{
+    .small-menu-layout{
         display:flex;
         flex-direction: column;
         align-items:flex-end;
-        width:var(--large-container-width);
+        width:var(--large-layout-width);
         gap:1px;
 
         .menu-close{
