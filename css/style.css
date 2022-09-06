@@ -122,14 +122,14 @@ body {
 }
 
 @media (min-width: 768px) {
-  .header-container .header {
+  .header-layout .header {
     flex-direction: row;
     gap: 50px;
   }
-  .header-container .header .menu-open {
+  .header-layout .header .menu-open {
     display: none;
   }
-  .header-container .header .large-menu {
+  .header-layout .header .large-menu {
     display: flex;
     flex-direction: row;
     flex: 2;
