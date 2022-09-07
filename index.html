@@ -14,42 +14,46 @@
     <script src="https://kit.fontawesome.com/7146d5aa74.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header-layout">
-        <div class="header">
-            <a href="#menu" class="menu-open">
-                <i class="fa-solid fa-bars"></i>
-            </a>
-            <ul class="large-menu">
-                <li><a href="test.html">header link one</a></li>
-                <li><a href="test.html">header link two</a></li>
-                <li><a href="test.html">header link three</a></li> 
-                <li><a href="test.html">header link four</a></li>
-                <li><a href="test.html">header link five</a></li>
-                <li><a href="test.html">header link six</a></li>  
-            </ul>     
-        </div>    
-    </div>
-    <div id="menu">
-        <div class="small-menu-layout">
-            <a href="#" class="menu-close">
-                <i class="fa-solid fa-xmark fa-lg"></i>
-            </a> 
-            <ul>
-                <li><a href="test.html">header link one</a></li>
-                <li><a href="test.html">header link two</a></li>
-                <li><a href="test.html">header link three</a></li> 
-                <li><a href="test.html">header link four</a></li>
-                <li><a href="test.html">header link five</a></li>
-                <li><a href="test.html">header link six</a></li>  
-            </ul>
+    <header>
+        <div class="header-layout">
+            <div class="header">
+                <a href="#menu" class="menu-open" aria-label="Open main menu">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </a>
+                <ul class="large-menu">
+                    <li><a href="test.html">header link one</a></li>
+                    <li><a href="test.html">header link two</a></li>
+                    <li><a href="test.html">header link three</a></li> 
+                    <li><a href="test.html">header link four</a></li>
+                    <li><a href="test.html">header link five</a></li>
+                    <li><a href="test.html">header link six</a></li>  
+                </ul>     
+            </div>    
         </div>
-    </div>
-    <div class="logo-layout">
-        <div class="logo-container">
-            <div class="logo-element">
-                <div class="logo">Header Logo</div>
+        <div id="menu" tabindex="-1">
+            <div class="small-menu-layout">
+                <a href="#" class="menu-close" aria-label="Close main menu">
+                    <span class="sr-only">Close main menu</span>
+                    <i class="fa-solid fa-xmark fa-lg" aria-hidden="true" hidden></i>
+                </a> 
+                <ul>
+                    <li><a href="test.html">header link one</a></li>
+                    <li><a href="test.html">header link two</a></li>
+                    <li><a href="test.html">header link three</a></li> 
+                    <li><a href="test.html">header link four</a></li>
+                    <li><a href="test.html">header link five</a></li>
+                    <li><a href="test.html">header link six</a></li>  
+                </ul>
             </div>
         </div>
-    </div>
+        <div class="logo-layout">
+            <div class="logo-container">
+                <div class="logo-element">
+                    <div class="logo">Header Logo</div>
+                </div>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
