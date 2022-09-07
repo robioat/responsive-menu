@@ -78,15 +78,15 @@ body{
 #menu{
     position:absolute;
     width:100%;
-    left:0;
-    top:-100%;
+    top:0px;
+    transform:translateY(-100%);
     display:flex;
     justify-content:center;
     transition:0.3s;
     transition-timing-function: cubic-bezier(0.190,  1.000, 0.220, 1.000);
     background-color: var(--dark-blue);
     &:target{
-        top:0px;
+        transform:translateY(0);
     }
     .small-menu-layout{
         display:flex;
@@ -160,7 +160,7 @@ body{
     }
     #menu:target{
         position:absolute;
-        left:-100%;
+        transform:translateY(-100%);
     }
     
 }

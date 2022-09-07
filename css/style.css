@@ -78,8 +78,8 @@ body {
 #menu {
   position: absolute;
   width: 100%;
-  left: 0;
-  top: -100%;
+  top: 0px;
+  transform: translateY(-100%);
   display: flex;
   justify-content: center;
   transition: 0.3s;
@@ -87,7 +87,7 @@ body {
   background-color: var(--dark-blue);
 }
 #menu:target {
-  top: 0px;
+  transform: translateY(0);
 }
 #menu .small-menu-layout {
   display: flex;
@@ -153,6 +153,6 @@ body {
   }
   #menu:target {
     position: absolute;
-    left: -100%;
+    transform: translateY(-100%);
   }
 }/*# sourceMappingURL=style.css.map */
