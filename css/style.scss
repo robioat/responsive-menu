@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
 }
+
 /* Screen reader only */
 .sr-only {
     position: absolute;
@@ -33,7 +34,7 @@ body{
     color:var(--dark-blue);
 }
 
-/* Header Styles */
+/* General Header Styles */
 .header-layout{
     display:flex;
     justify-content:center;
@@ -59,6 +60,8 @@ body{
         }
     }
 }
+
+/*Logo Layout (sits above header to deal with menu sliding in above)*/
 .logo-layout{
     position:absolute;
     width:100%;
@@ -88,6 +91,8 @@ body{
     }
     
 }
+
+/*Small Screen Hamburger Menu*/
 #menu{
     position:absolute;
     width:100%;
@@ -138,10 +143,7 @@ body{
     }
 }
 
-
-
-
-
+/*Large Screen Menu*/
 @media (min-width:768px) {
     .header-layout{
         .header{
