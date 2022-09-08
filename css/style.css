@@ -99,7 +99,7 @@ body {
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   background-color: var(--dark-blue);
 }
-#menu:target {
+#menu:target, #menu[aria-expanded=true] {
   transform: translateY(0);
 }
 #menu .small-menu-layout {
