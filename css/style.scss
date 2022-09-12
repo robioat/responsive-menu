@@ -53,6 +53,15 @@ header{
             }
         }
     }
+    .logo-element{
+        background-color: var(--dark-blue);
+        display:flex;
+        width:max-content;
+        height:100%;
+        align-items:center;
+        font-size: 22px;
+        padding:0 50px 0 0;
+    }
 }
 
 /* General Header Styles */
@@ -75,7 +84,7 @@ header{
             align-items:center;
             margin-top: -3px;
         }
-        .large-menu{
+        .large-menu, .large-screen-logo{
             top:-500px;
             position:absolute;
         }
@@ -99,16 +108,6 @@ header{
         height:100%;
         display:flex;
         align-items:center;
-
-        .logo-element{
-            background-color: var(--dark-blue);
-            display:flex;
-            width:max-content;
-            height:100%;
-            align-items:center;
-            font-size: 22px;
-            padding:0 50px 0 0;
-        }
     }
     
 }
@@ -170,6 +169,10 @@ header{
                 row-gap:10px;
                 justify-content: flex-end;
                 flex-wrap:wrap;
+                top:0;
+                position:relative;
+            }
+            .large-screen-logo{
                 top:0;
                 position:relative;
             }
