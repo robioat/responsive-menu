@@ -1,5 +1,3 @@
-
-
 document.querySelector(".menu-open").addEventListener("click", function(event){
     event.preventDefault();
     document.querySelector("#menu").setAttribute("aria-expanded","true");
