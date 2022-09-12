@@ -123,6 +123,7 @@ header{
     transition:0.3s;
     transition-timing-function: cubic-bezier(0.190,  1.000, 0.220, 1.000);
     background-color: var(--dark-blue);
+
     &:target,&[aria-expanded="true"] {
         transform:translateY(0);
     }
@@ -182,10 +183,8 @@ header{
         display:flex;
         align-items: center;
     }
-    #menu:target, #menu[aria-expanded="true"]{
+    #menu:target{
         position:absolute;
         transform:translateY(-100%);
-    }
-
-    
+    }    
 }

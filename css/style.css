@@ -176,7 +176,7 @@ header .logo-element {
     display: flex;
     align-items: center;
   }
-  #menu:target, #menu[aria-expanded=true] {
+  #menu:target {
     position: absolute;
     transform: translateY(-100%);
   }
