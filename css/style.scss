@@ -1,3 +1,15 @@
+/*  1.  Small screen menu uses :target to create opened and closed states, 
+        styles then applied. This ensures accessibility as the menu functions
+        without JavaScript in its basic form.
+    2.  JS then used to preventDefault, so that opening and closing doesnt trigger
+        the browser history
+    3.  aria-expanded added via JS (and css) to replace :target to make the styling work
+    4.  In order to make the menu slide down underneath the logo, the logo is placed on
+        a separate layer above the rest.
+    5.  Menu open and close links are within different areas of the html, so to animate
+        separately they are assigned toggles via JS
+*/
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -63,9 +75,37 @@ header{
         font-size: 22px;
         padding:0 50px 0 0;
     }
+    .menu-open a, .menu-close a{
+        -webkit-tap-highlight-color:transparent;
+    }
+    .menu-open{
+        display:flex;
+        align-items:center;
+        margin-top: -3px;
+    }
+    .menu-open a{
+        transform:translateY(100%);
+        transition:1s;
+        opacity:0;
+        color:var(--off-white);
+    }
+    .menu-open a.active{
+        transform:translateY(0%);
+        opacity:1;
+    }
+    .menu-close a{
+        transform:translateY(-100%);
+        transition:1s;
+        opacity:0;
+        color:var(--off-white);
+    }
+    .menu-close a.active{
+        transform:translateY(0%);
+        opacity:1;
+    }
 }
 
-/* General Header Styles */
+/* General Header */
 .header-layout{
     display:flex;
     justify-content:center;
@@ -80,21 +120,6 @@ header{
         width:var(--large-layout-width);
         gap: 10px;
 
-        .menu-open{
-            display:flex;
-            align-items:center;
-            margin-top: -3px;
-        }
-        .menu-open a{
-            transform:translateY(100%);
-            transition:1s;
-            opacity:0;
-            color:var(--off-white);
-        }
-        .menu-open a.active{
-            transform:translateY(0%);
-            opacity:1;
-        }
         .large-menu, .large-screen-logo{
             top:-500px;
             position:absolute;
@@ -102,7 +127,7 @@ header{
     }
 }
 
-/*Logo Layout (sits above header to deal with menu sliding in above)*/
+/* Logo Top Layer (sits above header to deal with menu sliding in above)*/
 .logo-layout{
     position:absolute;
     width:100%;
@@ -123,7 +148,7 @@ header{
     
 }
 
-/*Small Screen Hamburger Menu*/
+/* Hamburger Menu */
 #menu{
     position:absolute;
     width:100%;
@@ -152,23 +177,14 @@ header{
             height: var(--topbar-height);
             background-color: var(--dark-blue);           
         }
-        .menu-close a{
-            transform:translateY(-100%);
-            transition:1s;
-            opacity:0;
-            color:var(--off-white);
-        }
-        .menu-close a.active{
-            transform:translateY(0%);
-            opacity:1;
-        }
+        
     }
     li{
         padding:6px 0;
     }
 }
 
-/*Large Screen Menu*/
+/*Larger Screen Styles */
 @media (min-width:768px) {
     .header-layout{
         .header{

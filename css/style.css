@@ -1,3 +1,14 @@
+/*  1.  Small screen menu uses :target to create opened and closed states, 
+        styles then applied. This ensures accessibility as the menu functions
+        without JavaScript in its basic form.
+    2.  JS then used to preventDefault, so that opening and closing doesnt trigger
+        the browser history
+    3.  aria-expanded added via JS (and css) to replace :target to make the styling work
+    4.  In order to make the menu slide down underneath the logo, the logo is placed on
+        a separate layer above the rest.
+    5.  Menu open and close links are within different areas of the html, so to animate
+        separately they are assigned toggles via JS
+*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -62,8 +73,36 @@ header .logo-element {
   font-size: 22px;
   padding: 0 50px 0 0;
 }
+header .menu-open a, header .menu-close a {
+  -webkit-tap-highlight-color: transparent;
+}
+header .menu-open {
+  display: flex;
+  align-items: center;
+  margin-top: -3px;
+}
+header .menu-open a {
+  transform: translateY(100%);
+  transition: 1s;
+  opacity: 0;
+  color: var(--off-white);
+}
+header .menu-open a.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+header .menu-close a {
+  transform: translateY(-100%);
+  transition: 1s;
+  opacity: 0;
+  color: var(--off-white);
+}
+header .menu-close a.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
 
-/* General Header Styles */
+/* General Header */
 .header-layout {
   display: flex;
   justify-content: center;
@@ -78,27 +117,12 @@ header .logo-element {
   width: var(--large-layout-width);
   gap: 10px;
 }
-.header-layout .header .menu-open {
-  display: flex;
-  align-items: center;
-  margin-top: -3px;
-}
-.header-layout .header .menu-open a {
-  transform: translateY(100%);
-  transition: 1s;
-  opacity: 0;
-  color: var(--off-white);
-}
-.header-layout .header .menu-open a.active {
-  transform: translateY(0%);
-  opacity: 1;
-}
 .header-layout .header .large-menu, .header-layout .header .large-screen-logo {
   top: -500px;
   position: absolute;
 }
 
-/*Logo Layout (sits above header to deal with menu sliding in above)*/
+/* Logo Top Layer (sits above header to deal with menu sliding in above)*/
 .logo-layout {
   position: absolute;
   width: 100%;
@@ -117,7 +141,7 @@ header .logo-element {
   align-items: center;
 }
 
-/*Small Screen Hamburger Menu*/
+/* Hamburger Menu */
 #menu {
   position: absolute;
   width: 100%;
@@ -148,21 +172,11 @@ header .logo-element {
   height: var(--topbar-height);
   background-color: var(--dark-blue);
 }
-#menu .small-menu-layout .menu-close a {
-  transform: translateY(-100%);
-  transition: 1s;
-  opacity: 0;
-  color: var(--off-white);
-}
-#menu .small-menu-layout .menu-close a.active {
-  transform: translateY(0%);
-  opacity: 1;
-}
 #menu li {
   padding: 6px 0;
 }
 
-/*Large Screen Menu*/
+/*Larger Screen Styles */
 @media (min-width: 768px) {
   .header-layout .header {
     flex-direction: row;
