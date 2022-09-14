@@ -87,6 +87,7 @@ header .logo-element {
   transform: translateY(100%);
   transition: 1s;
   opacity: 0;
+  color: var(--off-white);
 }
 .header-layout .header .menu-open a.active {
   transform: translateY(0%);
@@ -151,6 +152,7 @@ header .logo-element {
   transform: translateY(-100%);
   transition: 1s;
   opacity: 0;
+  color: var(--off-white);
 }
 #menu .small-menu-layout .menu-close a.active {
   transform: translateY(0%);

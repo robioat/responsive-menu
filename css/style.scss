@@ -30,6 +30,7 @@ body{
     --grey-blue:#c7d5ed;
     --section-vertical-padding:100px; 
     --typography-v-padding:15px;
+
     font-family: 'Roboto', sans-serif;
     color:var(--dark-blue);
 }
@@ -88,6 +89,7 @@ header{
             transform:translateY(100%);
             transition:1s;
             opacity:0;
+            color:var(--off-white);
         }
         .menu-open a.active{
             transform:translateY(0%);
@@ -154,6 +156,7 @@ header{
             transform:translateY(-100%);
             transition:1s;
             opacity:0;
+            color:var(--off-white);
         }
         .menu-close a.active{
             transform:translateY(0%);
