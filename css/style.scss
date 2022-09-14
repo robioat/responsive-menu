@@ -84,6 +84,15 @@ header{
             align-items:center;
             margin-top: -3px;
         }
+        .menu-open a{
+            transform:translateY(100%);
+            transition:1s;
+            opacity:0;
+        }
+        .menu-open a.active{
+            transform:translateY(0%);
+            opacity:1;
+        }
         .large-menu, .large-screen-logo{
             top:-500px;
             position:absolute;
@@ -120,7 +129,7 @@ header{
     transform:translateY(-100%);
     display:flex;
     justify-content:center;
-    transition:1s;
+    transition:0.3s;
     transition-timing-function: cubic-bezier(0.190,  1.000, 0.220, 1.000);
     background-color: var(--dark-blue);
 
@@ -140,6 +149,15 @@ header{
             width: max-content;
             height: var(--topbar-height);
             background-color: var(--dark-blue);           
+        }
+        .menu-close a{
+            transform:translateY(-100%);
+            transition:1s;
+            opacity:0;
+        }
+        .menu-close a.active{
+            transform:translateY(0%);
+            opacity:1;
         }
     }
     li{

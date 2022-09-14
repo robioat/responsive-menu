@@ -83,6 +83,15 @@ header .logo-element {
   align-items: center;
   margin-top: -3px;
 }
+.header-layout .header .menu-open a {
+  transform: translateY(100%);
+  transition: 1s;
+  opacity: 0;
+}
+.header-layout .header .menu-open a.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
 .header-layout .header .large-menu, .header-layout .header .large-screen-logo {
   top: -500px;
   position: absolute;
@@ -115,7 +124,7 @@ header .logo-element {
   transform: translateY(-100%);
   display: flex;
   justify-content: center;
-  transition: 1s;
+  transition: 0.3s;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   background-color: var(--dark-blue);
 }
@@ -137,6 +146,15 @@ header .logo-element {
   width: max-content;
   height: var(--topbar-height);
   background-color: var(--dark-blue);
+}
+#menu .small-menu-layout .menu-close a {
+  transform: translateY(-100%);
+  transition: 1s;
+  opacity: 0;
+}
+#menu .small-menu-layout .menu-close a.active {
+  transform: translateY(0%);
+  opacity: 1;
 }
 #menu li {
   padding: 6px 0;
