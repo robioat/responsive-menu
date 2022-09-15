@@ -1,14 +1,25 @@
-/*  1.  Small screen menu uses :target to create opened and closed states, 
-        styles then applied. This ensures accessibility as the menu functions
-        without JavaScript in its basic form.
-    2.  JS then used to preventDefault, so that opening and closing doesnt trigger
-        the browser history
-    3.  aria-expanded added via JS (and css) to replace :target to make the styling work
-    4.  In order to make the menu slide down underneath the logo, the logo is placed on
-        a separate layer above the rest.
-    5.  Menu open and close links are within different areas of the html, so to animate
-        separately they are assigned toggles via JS
+/**
+* Menu Logic
+*
+* 1. Small screen menu uses :target to create opened and closed states, 
+* styles then applied to these selectors. This ensures accessibility as the 
+* menu functions without JavaScript in its basic form.
+*
+* 2. JS then used, preventDefault, so that opening and closing doesnt trigger
+* the browser history.
+*
+* 3. aria-expanded attributes added via JS to replace :target then styled instead
+* of :target.
+*
+* 4. To make the menu slide down underneath the logo, the logo is placed on a 
+* separate layer above.
+*
+* 5. Menu open and close links are within different areas of the html, so to 
+* animate separately they are assigned toggles via JS.
 */
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,22 +41,22 @@
 body {
   height: 100vh;
   width: 100%;
-  --large-layout-width:80%;
-  --small-layout-width:60%;
-  --topbar-height:70px;
-  --dark-blue:#1F2937;
-  --off-white:#F9FAF8;
-  --light-grey:#bfc3c8;
-  --medium-grey:#6b757f;
-  --bright-blue:#3882F6;
-  --grey-blue:#c7d5ed;
-  --section-vertical-padding:100px;
-  --typography-v-padding:15px;
+  --large-layout-width: 80%;
+  --small-layout-width: 60%;
+  --topbar-height: 70px;
+  --dark-blue: #1F2937;
+  --off-white: #F9FAF8;
+  --light-grey: #bfc3c8;
+  --medium-grey: #6b757f;
+  --bright-blue: #3882F6;
+  --grey-blue: #c7d5ed;
+  --section-vertical-padding: 100px;
+  --typography-v-padding: 15px;
   font-family: "Roboto", sans-serif;
   color: var(--dark-blue);
 }
 
-header ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0 0 20px 0;
@@ -53,56 +64,63 @@ header ul {
   flex-direction: column;
   width: 100%;
 }
-header ul li {
+ul li {
   display: inline-block;
   background-color: var(--dark-blue);
 }
-header ul li a {
+ul li a {
   text-decoration: none;
   color: var(--light-grey);
   font-size: 14px;
 }
-header .logo-element {
-  background-color: var(--dark-blue);
-  display: flex;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 100%;
-  align-items: center;
-  font-size: 22px;
-  padding: 0 50px 0 0;
-}
-header .menu-open a, header .menu-close a {
+
+/* ==========================================================================
+   Toggle Buttons
+   ========================================================================== */
+.menu-open a,
+.menu-close a {
   -webkit-tap-highlight-color: transparent;
 }
-header .menu-open {
+
+.menu-open {
   display: flex;
   align-items: center;
   margin-top: -3px;
 }
-header .menu-open a {
+.menu-open a {
   transform: translateY(100%);
   transition: 1s;
   opacity: 0;
   color: var(--off-white);
 }
-header .menu-open a.active {
+.menu-open a.active {
   transform: translateY(0%);
   opacity: 1;
 }
-header .menu-close a {
+
+.menu-close {
+  display: flex;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: var(--topbar-height);
+  background-color: var(--dark-blue);
+}
+.menu-close a {
   transform: translateY(-100%);
   transition: 1s;
   opacity: 0;
   color: var(--off-white);
 }
-header .menu-close a.active {
+.menu-close a.active {
   transform: translateY(0%);
   opacity: 1;
 }
 
-/* General Header */
+/* ==========================================================================
+   Main Container Layout
+   ========================================================================== */
 .header-layout {
   display: flex;
   justify-content: center;
@@ -117,12 +135,10 @@ header .menu-close a.active {
   width: var(--large-layout-width);
   gap: 10px;
 }
-.header-layout .header .large-menu, .header-layout .header .large-screen-logo {
-  top: -500px;
-  position: absolute;
-}
 
-/* Logo Top Layer (sits above header to deal with menu sliding in above)*/
+/* ==========================================================================
+   Logo
+   ========================================================================== */
 .logo-layout {
   position: absolute;
   width: 100%;
@@ -141,7 +157,22 @@ header .menu-close a.active {
   align-items: center;
 }
 
-/* Hamburger Menu */
+/* placed twice in html, therefore not nested */
+.logo-element {
+  background-color: var(--dark-blue);
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  font-size: 22px;
+  padding: 0 50px 0 0;
+}
+
+/* ==========================================================================
+   Small Screen Menu
+   ========================================================================== */
 #menu {
   position: absolute;
   width: 100%;
@@ -163,29 +194,31 @@ header .menu-close a.active {
   width: var(--large-layout-width);
   gap: 1px;
 }
-#menu .small-menu-layout .menu-close {
-  display: flex;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: var(--topbar-height);
-  background-color: var(--dark-blue);
-}
 #menu li {
   padding: 6px 0;
 }
 
-/*Larger Screen Styles */
+/* ==========================================================================
+   Large Screen Items
+   ========================================================================== */
+.large-menu,
+.large-screen-logo {
+  top: -500px;
+  position: absolute;
+}
+
+/* ==========================================================================
+   Large Screen Media Query
+   ========================================================================== */
 @media (min-width: 768px) {
-  .header-layout .header {
+  .header {
     flex-direction: row;
     gap: 50px;
   }
-  .header-layout .header .menu-open {
+  .header .menu-open {
     display: none;
   }
-  .header-layout .header .large-menu {
+  .header .large-menu {
     display: flex;
     flex-direction: row;
     flex: 2;
@@ -202,7 +235,7 @@ header .menu-close a.active {
     top: 0;
     position: relative;
   }
-  .header-layout .header .large-screen-logo {
+  .header .large-screen-logo {
     top: 0;
     position: relative;
   }
