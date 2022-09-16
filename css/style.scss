@@ -218,7 +218,7 @@ ul {
 
 .large-menu,
 .large-screen-logo {
-    top: -500px;
+    left: -100%;
     position: absolute;
 }
 
@@ -248,12 +248,12 @@ ul {
             row-gap: 10px;
             justify-content: flex-end;
             flex-wrap: wrap;
-            top: 0;
+            left: 0;
             position: relative;
         }
 
         .large-screen-logo {
-            top: 0;
+            left: 0;
             position: relative;
         }
     }
